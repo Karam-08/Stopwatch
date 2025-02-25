@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+<title>Stopwatch</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Stopwatch</h1>
+<div id="display">00:00:00</div>
+<button id="startStop">Start</button>
+<button id="reset">Reset</button>
+
+<script>
+$(document).ready(function() {
+  let startTime;
+  let running = false;
+  let timerInterval;
+
+  function updateDisplay() {
+    const currentTime = new Date().getTime();
+    const elapsedMilliseconds = currentTime - startTime;
+    const elapsedSeconds = Math.floor(elapsedMilliseconds / 1000);
+    const minutes = Math.floor(elapsedSeconds / 60);
+    const seconds = elapsedSeconds % 60;
+    const milliseconds = elapsedMilliseconds % 1000;
+
+    const formattedTime = 
+      String(minutes).padStart(2, '0') + ":" +
+      String(seconds).padStart(2, '0') + ":" +
+      String(milliseconds).padStart(3, '0');
+    $("#display").text(formattedTime);
+  }
+
+  $("#startStop").click(function() {
+    if (running) {
+      clearInterval(timerInterval);
+      running = false;
+      $(this).text("Resume");
+    } else {
+      startTime = new Date().getTime() - (startTime ? (new Date().getTime() - startTime) : 0);
+      timerInterval = setInterval(updateDisplay);
+      running = true;
+      $(this).text("Pause");
+    }
+  });
+
+  $("#reset").click(function() {
+      clearInterval(timerInterval);
+      running = false;
+      $("#startStop").text("Start");
+      $("#display").text("00:00:00");
+      startTime = 0;
+  });
+});
+</script>
+
+<style>
+#display {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+</style>
+
+</body>
+</html>
+</body>
+</html>
