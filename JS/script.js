@@ -8,8 +8,7 @@ $(document).ready(function(){
         if(running == true){
             clearInterval(interval)
             running == false;
-        }
-        else{
+        }else if(running == false){
             interval = setInterval(function(){
                 ms++
                 if(ms / 100 === 1){
