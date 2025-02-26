@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css/style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
     <title>Stopwatch</title>
 </head>
 <body>
     <header>
         <h1>Stopwatch</h1>
-        <p>This is a basic stopwatch</p>
     </header>
     
     <main>
         <section id="timer">00:00:00</section>
 
         <section>
-            <button id="startStop">Start</button><button id="reset">Reset</button>
+            <button id="start">Start</button>
+            <button id="lap">Lap</button>
+            <button id="reset">Reset</button>
         </section>
 
-        <section>
-            <a href="./Reaction time.html"><button>Reaction Time</button></a>
-            <a href="./click speed.html"><button>CPS Test</button></a>
-            <a href="./5 second challenge.html"><button>5 Second Challenge</button></a>
-        </section>
+        <!--<section> -->
+        <!--    <a href="./Reaction time.html"><button>Reaction Time</button></a>
+        <!--    <a href="./click speed.html"><button>CPS Test</button></a>
+        <!--    <a href="./5 second challenge.html"><button>5 Second Challenge</button></a>
+        <!-- </section> -->
 
-        <section id="display"></section>
+        <section id="lapdisplay">
+            <p></p>
+        </section>
     </main>
+    <script src="../JS/script.js"></script>
 </body>
 </html>
