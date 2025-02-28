@@ -8,11 +8,12 @@
   src="https://code.jquery.com/jquery-3.7.1.js"
   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
   crossorigin="anonymous"></script>
-    <title>Stopwatch</title>
+    <title>Stopwatch</title>    
 </head>
 <body>
     <header>
-        <h1>Stopwatch</h1>
+        <h1 id="header">Stopwatch</h1>
+        <p id="description">This is your basic Stopwatch</p>
     </header>
     
     <main>
@@ -27,6 +28,10 @@
 
         <section>
             <p id="lapdisplay"></p>
+        </section>
+
+        <section id="gamemodes">
+            <button id="5sec">5 second game</button>
         </section>
     </main>
     <script src="script.js"></script>
