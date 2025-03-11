@@ -3,7 +3,6 @@ $(document).ready(function(){
     seconds = 0;
     ms = 0;
     let running = false; // Variable for toggling button functions
-    secondGame = false; // Toggles 5 second game
 
     $("#start").on('click', function(){
         if(running){ // If the stopwatch is running,
@@ -53,19 +52,6 @@ $(document).ready(function(){
             ms = 0;
         }
     })
-
-    $("#5sec").on('click', function(){
-        if(secondGame){
-            $(this).html("Stop 5 seconds game")
-            
-            secondGame = false
-        }else{
-            $("#header").html("You are in the 5 second game mode")
-            $("#description").html("Click and end the timer as close to 5 seconds as you can")
-            secondGame = true
-        }
-    })
-
 })
 
 })  
